@@ -1,0 +1,16 @@
+export const GET_ALL_TASKS_REQUEST = "GET_ALL_TASKS_REQUEST";
+export const GET_ALL_TASKS_SUCCESS = "GET_ALL_TASKS_SUCCESS";
+export const GET_ALL_TASKS_FAILURE = "GET_ALL_TASKS_FAILURE";
+// =========== all tags requests
+export const GET_TAG_REQUEST = "GET_TAG_REQUEST";
+export const GET_TAG_SUCCESS = "GET_TAG_SUCCESS";
+export const GET_TAG_FAILURE = "GET_TAG_FAILURE";
+
+// =========== single task
+export const GET_TAST_REQUEST = "GET_TAST_REQUEST";
+export const GET_TAST_SUCCESS = "GET_TAST_SUCCESS";
+export const GET_TAST_FAILURE = "GET_TAST_FAILURE";
+// ========== UPADATE REQUEST ===========
+export const UPDATE_TASK_REQUEST = "UPDATE_TASK_REQUEST";
+export const UPDATE_TASK_SUCCESS = "UPDATE_TASK_SUCCESS";
+export const UPDATE_TASK_FAILURE = "UPDATE_TASK_FAILURE";
