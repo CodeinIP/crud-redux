@@ -41,18 +41,55 @@ export const reducer = (state = initState, { type, payload }) => {
       return {
         ...state,
       };
-    // case types.UPDATE_TASK_REQUEST:
-    //   return {
-    //     ...state,
-    //   };
-    // case types.UPDATE_TASK_SUCCESS:
-    //   return {
-    //     ...state,
-    //   };
-    // case types.UPDATE_TASK_FAILURE:
-    //   return {
-    //     ...state,
-    //   };
+    case types.ADD_TAG_REQUEST:
+      return {
+        ...state,
+      };
+    case types.ADD_TAG_SUCCESS:
+      return {
+        ...state,
+        tags: payload,
+      };
+    case types.ADD_TAG_FAILURE:
+      return {
+        ...state,
+      };
+    case types.UPDATE_TASK_REQUEST:
+      return {
+        ...state,
+      };
+    case types.UPDATE_TASK_SUCCESS:
+      return {
+        ...state,
+      };
+    case types.UPDATE_TASK_FAILURE:
+      return {
+        ...state,
+      };
+    case types.DELETE_TASK_REQUEST:
+      return {
+        ...state,
+      };
+    case types.DELETE_TASK_SUCCESS:
+      return {
+        ...state,
+      };
+    case types.DELETE_TASK_FAILURE:
+      return {
+        ...state,
+      };
+    case types.ADD_SUBTASK_REQUEST:
+      return {
+        ...state,
+      };
+    case types.ADD_SUBTASK_SUCCESS:
+      return {
+        ...state,
+      };
+    case types.ADD_SUBTASK_FAILURE:
+      return {
+        ...state,
+      };
     default:
       return state;
   }

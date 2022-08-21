@@ -5,6 +5,10 @@ export const GET_ALL_TASKS_FAILURE = "GET_ALL_TASKS_FAILURE";
 export const GET_TAG_REQUEST = "GET_TAG_REQUEST";
 export const GET_TAG_SUCCESS = "GET_TAG_SUCCESS";
 export const GET_TAG_FAILURE = "GET_TAG_FAILURE";
+// ========== ADD TAG
+export const ADD_TAG_REQUEST = "ADD_TAG_REQUEST";
+export const ADD_TAG_SUCCESS = "ADD_TAG_SUCCESS";
+export const ADD_TAG_FAILURE = "ADD_TAG_FAILURE";
 
 // =========== single task
 export const GET_TAST_REQUEST = "GET_TAST_REQUEST";
@@ -14,3 +18,15 @@ export const GET_TAST_FAILURE = "GET_TAST_FAILURE";
 export const UPDATE_TASK_REQUEST = "UPDATE_TASK_REQUEST";
 export const UPDATE_TASK_SUCCESS = "UPDATE_TASK_SUCCESS";
 export const UPDATE_TASK_FAILURE = "UPDATE_TASK_FAILURE";
+// =========== DELETE REQUEST =============
+export const DELETE_TASK_REQUEST = "DELETE_TASK_REQUEST";
+export const DELETE_TASK_SUCCESS = "DELETE_TASK_SUCCESS";
+export const DELETE_TASK_FAILURE = "DELETE_TASK_FAILURE";
+// ============= add sub tasks ========
+export const ADD_SUBTASK_REQUEST = "ADD_SUBTASK_REQUEST";
+export const ADD_SUBTASK_SUCCESS = "ADD_SUBTASK_SUCCESS";
+export const ADD_SUBTASK_FAILURE = "ADD_SUBTASK_FAILURE";
+// =========== create task
+export const CREATE_TASKS_REQUEST = "CREATE_TASKS_REQUEST";
+export const CREATE_TASKS_SUCCESS = "CREATE_TASKS_SUCCESS";
+export const CREATE_TASKS_FAILURE = "CREATE_TASKS_FAILURE";
