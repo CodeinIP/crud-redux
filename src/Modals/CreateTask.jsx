@@ -59,7 +59,7 @@ const reducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-const CreateTask = ({ isOpen, onClose }) => {
+export const CreateTask = ({ isOpen, onClose }) => {
   const [state, setState] = useReducer(reducer, initialState);
   const dispatch = useDispatch();
   const tagList = useSelector((store) => store.appReducer.tags);

@@ -25,7 +25,7 @@ const HomePage = () => {
     return false;
   };
   // tasks.filter((task)=>{})
-  console.log(tasks.filter(filterByParamTags));
+  // console.log(tasks.filter(filterByParamTags));
 
   useEffect(() => {
     dispatch(getTasksList());

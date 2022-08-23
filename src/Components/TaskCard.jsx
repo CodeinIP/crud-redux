@@ -30,10 +30,10 @@ const TaskCard = ({
       .map((item) => item.subTaskTitle);
     return data;
   });
-  console.log(tags, checkbox);
+  // console.log(tags, checkbox);
 
   const updateSubTaskStatus = (value) => {
-    console.log(value);
+    // console.log(value);
     let newSubTaskData = subTasks.map((item) => {
       if (value.includes(item.subTaskTitle)) {
         return {

@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { Box, Flex, Text, Button } from "@chakra-ui/react";
+import { Box, Flex, Text, Button, useDisclosure } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { getTagList, getTasksList } from "../Redux/AppReducer/action";
 import { pureFinalPropsSelectorFactory } from "react-redux/es/connect/selectorFactory";
 import Profile from "./Profile";
+import CreateTask from "../Modals/CreateTask";
+import { logout } from "../Redux/AuthReducer/action";
+import { removeLocalData, saveLocalData } from "../utils/localstorage";
 const Sidebar = () => {
   const dispatch = useDispatch();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const tagList = useSelector((store) => store.appReducer.tags);
   const tasks = useSelector((store) => store.appReducer.tasks);
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
+  const isAuth = useSelector((store) => store.authReducer.isAuth);
   const [selectedTags, setSelectedTags] = useState(
     searchParams.getAll("tags") || []
   );
@@ -28,7 +33,12 @@ const Sidebar = () => {
     setSearchParams({ tags: newTags });
   };
   const logoutHandler = () => {
-    console.log("logout");
+    // console.log("logout");
+    dispatch(logout()).then((r) => {
+      if ((r.type = "GET_USER_LOGOUT_SUCCESS")) {
+        removeLocalData("token");
+      }
+    });
   };
   useEffect(() => {
     if (tagList.length === 0) {
@@ -52,7 +62,10 @@ const Sidebar = () => {
           </Flex>
         </Box>
         <Flex justify="center" margin="0.25rem 0">
-          <Button width="100%">Create New Task</Button>
+          <Button width="100%" onClick={onOpen}>
+            Create New Task
+          </Button>
+          <CreateTask isOpen={isOpen} onClose={onClose} />
         </Flex>
         <Box flex="6" overflow="auto">
           <Flex direction="column" gap="5px">
@@ -69,9 +82,9 @@ const Sidebar = () => {
               }
               color={selectedTags.includes("All") ? "gray.500" : "white"}
             >
-              <Flex padding="0 10px">
+              <Flex justifyContent="space-between" padding="0 10px">
                 <Text>All</Text>
-                <Text>3</Text>
+                <Text>{tasks.length}</Text>
               </Flex>
             </Box>
 
@@ -111,7 +124,14 @@ const Sidebar = () => {
           </Flex>
         </Box>
         <Box flex="2">
-          <Button width="100%" onClick={logoutHandler}>
+          <Button
+            width="100%"
+            onClick={() => logoutHandler()}
+            variant="outline"
+            colorScheme="red"
+            disabled={isAuth === false}
+            m="5px auto"
+          >
             LOGOUT
           </Button>
         </Box>

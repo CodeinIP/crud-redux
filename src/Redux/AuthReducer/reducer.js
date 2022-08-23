@@ -16,11 +16,12 @@ export const reducer = (state = initAuth, { type, payload }) => {
       };
     case types.GET_USER_LOGIN_SUCCESS:
       saveLocalData("token", payload);
+      // console.log(payload);
       return {
         ...state,
         isLoading: false,
         isAuth: true,
-        token: payload,
+        token: payload.token,
       };
     case types.GET_USER_LOGIN_FAILURE:
       return {
@@ -30,6 +31,26 @@ export const reducer = (state = initAuth, { type, payload }) => {
         error: payload,
         isAuth: false,
         token: "",
+      };
+    case types.GET_USER_LOGOUT_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case types.GET_USER_LOGOUT_SUCCESS:
+
+      return {
+        ...state,
+        isLoading: false,
+        isAuth: false,
+        token: payload,
+      };
+    case types.GET_USER_LOGOUT_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+        error: "Couldn't logout",
       };
     default:
       return state;

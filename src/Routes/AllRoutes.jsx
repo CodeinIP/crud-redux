@@ -4,6 +4,7 @@ import { HStack, Box } from "@chakra-ui/react";
 import Sidebar from "../Components/Sidebar";
 import EditPage from "../Pages/EditPage";
 import HomePage from "../Pages/HomePage";
+import Login from "../Pages/Login";
 const AllRoutes = () => {
   return (
     <Box backgroundColor="white" color="black" width="100vw" height="100vh">
@@ -26,6 +27,7 @@ const AllRoutes = () => {
             </HStack>
           }
         />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Box>
   );

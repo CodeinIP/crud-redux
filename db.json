@@ -9,7 +9,16 @@
         "Others",
         "Official"
       ],
-      "subTasks": []
+      "subTasks": [
+        {
+          "subTaskTitle": "Task 1",
+          "status": true
+        },
+        {
+          "subTaskTitle": "Task 2",
+          "status": true
+        }
+      ]
     },
     {
       "id": 2,
@@ -93,7 +102,24 @@
       "tags": [
         "Others"
       ],
-      "subTasks": [],
+      "subTasks": [
+        {
+          "subTaskTitle": "Task 1",
+          "status": true
+        },
+        {
+          "subTaskTitle": "Task2",
+          "status": true
+        },
+        {
+          "subTaskTitle": "Task3",
+          "status": true
+        },
+        {
+          "subTaskTitle": "Task ;alksdjf;alsdjkf",
+          "status": true
+        }
+      ],
       "id": 6
     }
   ],
